@@ -1,7 +1,6 @@
-"use client";
 import PricingPage from "@/components/pricing-page";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import { FaPager } from "react-icons/fa6";
 import { IoStatsChart } from "react-icons/io5";
@@ -9,6 +8,8 @@ import { MdDisplaySettings } from "react-icons/md";
 
 import { MdOutlineLanguage } from "react-icons/md";
 import { RiCustomerService2Line } from "react-icons/ri";
+import { loginAction } from "./actions/googlelogin";
+import { getAuth } from "@/hooks/getAuth";
 
 const features = [
   {
@@ -54,25 +55,29 @@ const features = [
     description: "Get help from our team of experts whenever you need it.",
   },
 ];
-export default function Home() {
+export default async function Home() {
+  const session = await getAuth();
+  console.log(session);
   return (
-    <div className=" relative w-full -z-30 h-full flex flex-col bg-[#191919] ">
+    <div className=" relative w-full z-10 h-full flex flex-col bg-[#191919] ">
       {/* hero section */}
-      <div className=" p-9 flex relative -z-20 flex-col items-center justify-center h-full w-full ">
-        <div className="absolute -z-10 bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:24px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+      <div className="  p-9 flex relative z-20 flex-col items-center justify-center h-full w-full ">
+        <div className="absolute   z-10 bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:24px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
         <div className="absolute top-0 z-[-2] h-screen w-screen bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(190, 215, 84),rgba(190, 215, 84))]"></div>
         <h1 className=" text-5xl md:text-7xl w-[70%] mt-24 mb-9  font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#d8f45e] via-[#d8f45e] to-white  text-center">
           Build Smart AI Chatbots for Your Website
         </h1>
         <p className=" text-sm tracking-wide w-[50%] text-neutral-700 text-center mt-4">
-          "Create customized AI-powered chatbots that understand your website
-          content and provide instant answers to your visitors' questions".
+          &quot Create customized AI-powered chatbots that understand your
+          website content and provide instant answers to your visitors'
+          questions &quot .
         </p>
-        <div className=" flex items-center justify-center mt-8 gap-10">
-          <button className=" p-3 px-4 hover:scale-105 active:scale-95  bg-green text-dark  font-bold  rounded-lg">
-            Get Started
-          </button>
-
+        <div className=" z-50 transition-all duration-300  flex items-center justify-center mt-8 gap-10">
+          <form action={loginAction}>
+            <button className=" p-3 px-4 hover:scale-105 active:scale-95  bg-green text-dark  font-bold  rounded-lg">
+              Get Started
+            </button>
+          </form>
           <button className="  border-green text-white  px-4 p-3 rounded-lg border  ">
             Start Demo
           </button>
