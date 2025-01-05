@@ -1,4 +1,4 @@
-import HowItWorks from "@/components/how-it-works-animated";
+"use client";
 import PricingPage from "@/components/pricing-page";
 import Image from "next/image";
 import React from "react";
@@ -69,7 +69,7 @@ export default function Home() {
           content and provide instant answers to your visitors' questions".
         </p>
         <div className=" flex items-center justify-center mt-8 gap-10">
-          <button className=" p-3 px-4  bg-green text-dark  font-bold  rounded-lg">
+          <button className=" p-3 px-4 hover:scale-105 active:scale-95  bg-green text-dark  font-bold  rounded-lg">
             Get Started
           </button>
 
@@ -105,7 +105,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <HowItWorks />
+
       <PricingPage />
     </div>
   );
