@@ -1,101 +1,112 @@
+import HowItWorks from "@/components/how-it-works-animated";
+import PricingPage from "@/components/pricing-page";
 import Image from "next/image";
+import React from "react";
+import { AiOutlineThunderbolt } from "react-icons/ai";
+import { FaPager } from "react-icons/fa6";
+import { IoStatsChart } from "react-icons/io5";
+import { MdDisplaySettings } from "react-icons/md";
 
+import { MdOutlineLanguage } from "react-icons/md";
+import { RiCustomerService2Line } from "react-icons/ri";
+
+const features = [
+  {
+    icons: <AiOutlineThunderbolt />,
+    id: 1,
+    title: "Quick Integration",
+    description:
+      "Simple copy-paste code snippet to add the chatbot to your website in minutes.",
+  },
+
+  {
+    icons: <FaPager />,
+    id: 2,
+    title: "Custom Training",
+    description:
+      "Train the chatbot on your own data to respond to specific queries.",
+  },
+  {
+    icons: <IoStatsChart />,
+    id: 3,
+    title: "Analytics Dashboard",
+    description:
+      "Track user interactions, conversations, and chatbot performance.",
+  },
+  {
+    icons: <MdDisplaySettings />,
+    id: 4,
+    title: "Customizable Design",
+    description:
+      "Customize the chatbot's appearance to match your website's branding.",
+  },
+  {
+    icons: <MdOutlineLanguage />,
+    id: 5,
+    title: "Multi-Language Support",
+    description:
+      "Support multiple languages, including English, French, and German.",
+  },
+  {
+    icons: <RiCustomerService2Line />,
+    id: 6,
+    title: "24/7 Customer Support",
+    description: "Get help from our team of experts whenever you need it.",
+  },
+];
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className=" relative w-full -z-30 h-full flex flex-col bg-[#191919] ">
+      {/* hero section */}
+      <div className=" p-9 flex relative -z-20 flex-col items-center justify-center h-full w-full ">
+        <div className="absolute -z-10 bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:24px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        <div className="absolute top-0 z-[-2] h-screen w-screen bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(190, 215, 84),rgba(190, 215, 84))]"></div>
+        <h1 className=" text-5xl md:text-7xl w-[70%] mt-24 mb-9  font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#d8f45e] via-[#d8f45e] to-white  text-center">
+          Build Smart AI Chatbots for Your Website
+        </h1>
+        <p className=" text-sm tracking-wide w-[50%] text-neutral-700 text-center mt-4">
+          "Create customized AI-powered chatbots that understand your website
+          content and provide instant answers to your visitors' questions".
+        </p>
+        <div className=" flex items-center justify-center mt-8 gap-10">
+          <button className=" p-3 px-4  bg-green text-dark  font-bold  rounded-lg">
+            Get Started
+          </button>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <button className="  border-green text-white  px-4 p-3 rounded-lg border  ">
+            Start Demo
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className=" relative w-full flex items-center justify-center flex-col">
+          <div className=" absolute w-[70%] bg-gradient-to-r  from-green/70 to-transparent  rounded-lg blur h-96"></div>
+          <div className=" relative w-[70%] h-96 bg-dark rounded-lg  m-9 "></div>
+        </div>
+      </div>
+      {/* Features section */}
+      <div className=" text-white   flex flex-col items-center justify-center w-full h-full">
+        <h1 className=" text-4xl font-bold mt-6 mb-2 "> Powerfull features </h1>
+        <p className="text-neutral-500 font-normal text-lg">
+          Everything you need to create intelligent chatbots
+        </p>
+        <div className=" grid lg:grid-cols-3 gap-4 p-6 md:grid-cols-2 grid-cols-1 ">
+          {features.map((feature) => (
+            <div
+              key={feature.id}
+              className=" border rounded-lg  border-neutral-800 bg-neutral-900/50 flex flex-col items-center justify-center p-4"
+            >
+              <div className=" bg-green p-4 rounded-full text-dark">
+                {feature.icons}
+              </div>
+              <h1 className=" text-xl font-bold mt-4">{feature.title}</h1>
+              <p className=" text-neutral-500 text-center mt-2">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <HowItWorks />
+      <PricingPage />
     </div>
   );
 }
