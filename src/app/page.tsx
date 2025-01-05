@@ -1,6 +1,6 @@
 import PricingPage from "@/components/pricing-page";
-import Image from "next/image";
-import React, { useEffect } from "react";
+
+import React from "react";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import { FaPager } from "react-icons/fa6";
 import { IoStatsChart } from "react-icons/io5";
