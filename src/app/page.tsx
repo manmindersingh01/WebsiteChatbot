@@ -69,7 +69,7 @@ export default async function Home() {
         </h1>
         <p className=" text-sm tracking-wide w-[50%] text-neutral-700 text-center mt-4">
           &quot Create customized AI-powered chatbots that understand your
-          website content and provide instant answers to your visitors'
+          website content and provide instant answers to your visitors &apos
           questions &quot .
         </p>
         <div className=" z-50 transition-all duration-300  flex items-center justify-center mt-8 gap-10">
