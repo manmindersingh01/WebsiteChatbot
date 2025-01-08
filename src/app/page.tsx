@@ -9,7 +9,9 @@ import { MdDisplaySettings } from "react-icons/md";
 import { MdOutlineLanguage } from "react-icons/md";
 import { RiCustomerService2Line } from "react-icons/ri";
 import { loginAction } from "./actions/googlelogin";
-import { getAuth } from "@/hooks/getAuth";
+
+import { auth } from "@/lib/auth";
+import { redirect } from "next/navigation";
 
 const features = [
   {
@@ -56,8 +58,11 @@ const features = [
   },
 ];
 export default async function Home() {
-  const session = await getAuth();
-  console.log(session);
+  const session = await auth();
+  if (!session?.user) {
+    redirect("/dashboard");
+  }
+
   return (
     <div className=" relative w-full z-10 h-full flex flex-col bg-[#191919] ">
       {/* hero section */}
